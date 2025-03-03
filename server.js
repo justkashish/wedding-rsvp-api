@@ -15,6 +15,11 @@ app.use(express.json());
 
 app.use(errorHandler);
 
+// Default route for root URL
+app.get('/', (req, res) => {
+    res.send('🎉 Server is Live! 🎉');
+});
+
 // API Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/guests', guestRoutes);
